@@ -1,3 +1,5 @@
-./.vs/
-./lab-*/bin/
-./lab-*/obj/
+.vs/*
+lab-*/bin/
+lab-*/obj/
+
+*.csproj.user
