@@ -28,7 +28,7 @@ namespace lab_02
             
             if (drawing) {
                 pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                e.Graphics.DrawRectangle(pen, currentRect);
+                e.Graphics.DrawRectangle(pen, curRect);
             }
         }
 
@@ -39,20 +39,31 @@ namespace lab_02
 
 
         bool drawing = false, pressed = false;
-        Rectangle currentRect = new Rectangle();
+        Point startP = new Point();
+        Rectangle curRect = new Rectangle();
         private void Form2_MouseDown(object sender, MouseEventArgs e)
         {
             pressed = true;
-            currentRect.X = currentRect.Width = e.X;
-            currentRect.Y = currentRect.Height = e.Y;
+            startP.X = e.X;
+            startP.Y = e.Y;
+
+            curRect.X = curRect.Width = e.X;
+            curRect.Y = curRect.Height = e.Y;
         }
 
         private void Form2_MouseMove(object sender, MouseEventArgs e)
         {
             if (pressed) {
                 drawing = true;
-                currentRect.Width = e.X - currentRect.X;
-                currentRect.Height = e.Y - currentRect.Y;
+                if (e.X < startP.X || e.X < startP.Y) {
+                    curRect.X = e.X;
+                    curRect.Y = e.Y;
+                    curRect.Width = startP.X - e.X;
+                    curRect.Height = startP.Y - e.Y;
+                } else {
+                    curRect.Width = e.X - curRect.X;
+                    curRect.Height = e.Y - curRect.Y;
+                }
                 this.Refresh();
             }
         } 
@@ -60,7 +71,7 @@ namespace lab_02
         private void Form2_MouseUp(object sender, MouseEventArgs e)
         {
             if (drawing) {
-                rectangles.Add(currentRect);
+                rectangles.Add(curRect);
                 pressed = drawing = false;
             }
             this.Refresh();
