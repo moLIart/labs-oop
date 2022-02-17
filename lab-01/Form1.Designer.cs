@@ -1,4 +1,6 @@
-﻿namespace lab_01
+﻿using System.Windows.Forms;
+
+namespace lab_01
 {
     partial class Form1
     {

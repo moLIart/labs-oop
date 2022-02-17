@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace lab_01
 {
     public partial class Form1 : Form
