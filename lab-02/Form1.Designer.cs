@@ -33,33 +33,42 @@ namespace lab_02
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.windowToolStripMenuItem});
+            this.windowToolStripMenuItem,
+            this.windowToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MdiWindowListItem = this.windowToolStripMenuItem1;
             // 
             // windowToolStripMenuItem
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem, new ToolStripSeparator()});
+            this.newToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.windowToolStripMenuItem.Text = "Windows";
+            this.windowToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.windowToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // windowToolStripMenuItem1
+            // 
+            this.windowToolStripMenuItem1.Name = "windowToolStripMenuItem1";
+            this.windowToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
+            this.windowToolStripMenuItem1.Text = "&Window";
             // 
             // Form1
             // 
@@ -83,5 +92,6 @@ namespace lab_02
         private MenuStrip menuStrip1;
         private ToolStripMenuItem windowToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem windowToolStripMenuItem1;
     }
 }

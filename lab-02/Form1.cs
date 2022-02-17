@@ -13,13 +13,7 @@ namespace lab_02
         {
             Form2 form = new Form2();
             form.MdiParent = this;
-            form.FormClosed += (closedSender, closedE) => {
-                form = null;
-            };
             form.Show();
-
-            this.windowToolStripMenuItem.DropDownItems.Add(new ToolStripButton(form.Text));
         }
-
     }
 }
