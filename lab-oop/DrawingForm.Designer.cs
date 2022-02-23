@@ -1,6 +1,6 @@
 ﻿namespace lab_oop
 {
-    partial class Form2
+    partial class DrawingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form2
+            // DrawingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 321);
-            this.Name = "Form2";
+            this.Name = "DrawingForm";
             this.Text = "Form2";
-            this.SizeChanged += new System.EventHandler(this.Form2_SizeChanged);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
             this.ResumeLayout(false);
 
         }

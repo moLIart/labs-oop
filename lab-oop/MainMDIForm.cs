@@ -11,7 +11,7 @@ namespace lab_oop
         }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            DrawingForm form = new DrawingForm();
             form.MdiParent = this;
             form.Show();
         }
