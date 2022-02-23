@@ -7,17 +7,16 @@ namespace lab_oop
 {
     public partial class DrawingForm : Form
     {
-        List<Rectangle> rectangles = new List<Rectangle>();
+        List<MyRectangle> rectangles = new List<MyRectangle>();
         public DrawingForm()
         {
             InitializeComponent();
             DoubleBuffered = true;
         }
- 
         
         bool mouseDown = false;
         Point mouseDownPoint = Point.Empty;
-        Rectangle dragRectangle = Rectangle.Empty;
+        MyRectangle dragRectangle = new MyRectangle();
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
@@ -29,7 +28,7 @@ namespace lab_oop
         {
             base.OnMouseUp(e);
             if (mouseDown) {
-                rectangles.Add(dragRectangle);
+                rectangles.Add(new MyRectangle(dragRectangle));
                 mouseDown = false;
                 this.Refresh();
             }
@@ -52,13 +51,13 @@ namespace lab_oop
 
             Pen pen = new Pen(Color.Black, 2);
             e.Graphics.Clear(Color.White);
-            foreach (Rectangle rect in rectangles) {
-                e.Graphics.DrawRectangle(pen, rect);
+            foreach (MyRectangle rect in rectangles) {
+                rect.Draw(e.Graphics, pen);
             }
             
             if (mouseDown) {
                 pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                e.Graphics.DrawRectangle(pen, dragRectangle);
+                dragRectangle.Draw(e.Graphics, pen);
             }
         }
     }
