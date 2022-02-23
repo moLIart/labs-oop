@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace lab_02
+namespace lab_oop
 {
     public partial class Form2 : Form
     {
@@ -34,7 +34,7 @@ namespace lab_02
 
 
         bool drawing = false, pressed = false;
-        Point startP = new Point();
+        Point startP = new Point(0, 0);
         Rectangle curRect = new Rectangle();
         private void Form2_MouseDown(object sender, MouseEventArgs e)
         {

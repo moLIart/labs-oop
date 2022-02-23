@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace lab_02
+namespace lab_oop
 {
     internal static class Program
     {
@@ -13,7 +13,7 @@ namespace lab_02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

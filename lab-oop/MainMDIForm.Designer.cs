@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace lab_02
+namespace lab_oop
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
