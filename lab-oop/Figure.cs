@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace lab_oop
 {
-    abstract class Figure
+    [Serializable]
+    public abstract class Figure
     {
         public abstract void Draw(Graphics g, Pen pen);
     }

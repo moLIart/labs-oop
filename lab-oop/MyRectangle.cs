@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace lab_oop
 {
-    internal class MyRectangle : Figure
+    [Serializable]
+    public class MyRectangle : Figure
     {
         public static readonly MyRectangle Empty = new MyRectangle();
         public int X { get; set; }
