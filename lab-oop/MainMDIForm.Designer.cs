@@ -36,6 +36,10 @@ namespace lab_oop
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseBaackgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseBorderColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseBorderWidthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +47,8 @@ namespace lab_oop
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.windowToolStripMenuItem,
-            this.windowToolStripMenuItem1});
+            this.windowToolStripMenuItem1,
+            this.parametersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.windowToolStripMenuItem1;
             this.menuStrip1.Name = "menuStrip1";
@@ -65,21 +70,21 @@ namespace lab_oop
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -88,6 +93,36 @@ namespace lab_oop
             this.windowToolStripMenuItem1.Name = "windowToolStripMenuItem1";
             this.windowToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
             this.windowToolStripMenuItem1.Text = "&Window";
+            // 
+            // parametersToolStripMenuItem
+            // 
+            this.parametersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chooseBaackgroundColorToolStripMenuItem,
+            this.chooseBorderColorToolStripMenuItem,
+            this.chooseBorderWidthToolStripMenuItem});
+            this.parametersToolStripMenuItem.Name = "parametersToolStripMenuItem";
+            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.parametersToolStripMenuItem.Text = "Parameters";
+            // 
+            // chooseBaackgroundColorToolStripMenuItem
+            // 
+            this.chooseBaackgroundColorToolStripMenuItem.Name = "chooseBaackgroundColorToolStripMenuItem";
+            this.chooseBaackgroundColorToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.chooseBaackgroundColorToolStripMenuItem.Text = "Choose background color...";
+            this.chooseBaackgroundColorToolStripMenuItem.Click += new System.EventHandler(this.chooseBaackgroundColorToolStripMenuItem_Click);
+            // 
+            // chooseBorderColorToolStripMenuItem
+            // 
+            this.chooseBorderColorToolStripMenuItem.Name = "chooseBorderColorToolStripMenuItem";
+            this.chooseBorderColorToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.chooseBorderColorToolStripMenuItem.Text = "Choose border color...";
+            this.chooseBorderColorToolStripMenuItem.Click += new System.EventHandler(this.chooseBorderColorToolStripMenuItem_Click);
+            // 
+            // chooseBorderWidthToolStripMenuItem
+            // 
+            this.chooseBorderWidthToolStripMenuItem.Name = "chooseBorderWidthToolStripMenuItem";
+            this.chooseBorderWidthToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.chooseBorderWidthToolStripMenuItem.Text = "Choose border width";
             // 
             // MainForm
             // 
@@ -114,5 +149,9 @@ namespace lab_oop
         private ToolStripMenuItem windowToolStripMenuItem1;
         private ToolStripMenuItem openToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem parametersToolStripMenuItem;
+        private ToolStripMenuItem chooseBaackgroundColorToolStripMenuItem;
+        private ToolStripMenuItem chooseBorderColorToolStripMenuItem;
+        private ToolStripMenuItem chooseBorderWidthToolStripMenuItem;
     }
 }

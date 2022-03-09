@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -9,6 +10,16 @@ namespace lab_oop
         public MainForm()
         {
             InitializeComponent();
+
+            int[] widthArr = new int[] { 1, 2, 5, 8, 10, 12, 15 };
+            for (int i = 0; i < 7; i++) {
+                ToolStripMenuItem item = new ToolStripMenuItem(widthArr[i].ToString());
+                int tmp = widthArr[i];
+                item.Click += new EventHandler(delegate (Object o, EventArgs a) {
+                    Globals.rectBorderWidth = tmp;
+                });
+                this.chooseBorderWidthToolStripMenuItem.DropDownItems.Add(item);
+            }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +68,28 @@ namespace lab_oop
         private void windowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveToolStripMenuItem.Enabled = this.ActiveMdiChild != null;
+        }
+
+        private void chooseBaackgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            MyDialog.AllowFullOpen = false;
+            MyDialog.ShowHelp = true;
+            MyDialog.Color = Globals.rectBackColor;
+
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                Globals.rectBackColor = MyDialog.Color;
+        }
+
+        private void chooseBorderColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            MyDialog.AllowFullOpen = false;
+            MyDialog.ShowHelp = true;
+            MyDialog.Color = Globals.rectBorderColor;
+
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                Globals.rectBorderColor = MyDialog.Color;
         }
     }
 }

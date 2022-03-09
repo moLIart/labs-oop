@@ -10,11 +10,14 @@ namespace lab_oop
     [Serializable]
     public class MyRectangle : Figure
     {
-        public static readonly MyRectangle Empty = new MyRectangle();
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+
+        public Color BorderColor { get; set; }
+        public int BorderWidth { get; set; }
+        public Color BackgroundColor { get; set; }
 
         public MyRectangle() { }
         public MyRectangle(MyRectangle other) {
@@ -22,16 +25,15 @@ namespace lab_oop
             Y = other.Y;
             Width = other.Width;
             Height = other.Height;
+            BorderColor = other.BorderColor;
+            BorderWidth = other.BorderWidth;
+            BackgroundColor = other.BackgroundColor;
         }
-        public MyRectangle(int X, int Y, int Width, int Height)
-        {
-            this.X = X;
-            this.Y = Y;
-            this.Width = Width;
-            this.Height = Height;
-        }
-        public override void Draw(Graphics g, Pen pen) {
-            g.DrawRectangle(pen, X, Y, Width, Height);
+        public override void Draw(Graphics g) {
+            Pen borderPen = new Pen(BorderColor, BorderWidth);
+            Brush brush = new SolidBrush(BackgroundColor);
+            g.FillRectangle(brush, X, Y, Width, Height);
+            g.DrawRectangle(borderPen, X, Y, Width, Height);
         }
     }
 }

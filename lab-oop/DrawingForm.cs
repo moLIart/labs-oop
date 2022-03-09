@@ -43,6 +43,9 @@ namespace lab_oop
         {
             base.OnMouseUp(e);
             if (mouseDown) {
+                dragRectangle.BackgroundColor = Globals.rectBackColor;
+                dragRectangle.BorderColor = Globals.rectBorderColor;
+                dragRectangle.BorderWidth = Globals.rectBorderWidth;
                 rectangles.Add(new MyRectangle(dragRectangle));
                 mouseDown = false;
                 this.Refresh();
@@ -65,15 +68,15 @@ namespace lab_oop
         {
             base.OnPaint(e);
 
-            Pen pen = new Pen(Color.Black, 2);
             e.Graphics.Clear(Color.White);
             foreach (MyRectangle rect in rectangles) {
-                rect.Draw(e.Graphics, pen);
+                rect.Draw(e.Graphics);
             }
             
             if (mouseDown) {
+                Pen pen = new Pen(Color.Black, 2);
                 pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-                dragRectangle.Draw(e.Graphics, pen);
+                e.Graphics.DrawRectangle(pen, dragRectangle.X, dragRectangle.Y, dragRectangle.Width, dragRectangle.Height);
             }
         }
 

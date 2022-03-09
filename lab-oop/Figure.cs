@@ -10,6 +10,6 @@ namespace lab_oop
     [Serializable]
     public abstract class Figure
     {
-        public abstract void Draw(Graphics g, Pen pen);
+        public abstract void Draw(Graphics g);
     }
 }
