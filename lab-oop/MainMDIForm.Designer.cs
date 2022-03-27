@@ -40,6 +40,7 @@ namespace lab_oop
             this.chooseBaackgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseBorderColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseBorderWidthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseCanvasSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +100,8 @@ namespace lab_oop
             this.parametersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chooseBaackgroundColorToolStripMenuItem,
             this.chooseBorderColorToolStripMenuItem,
-            this.chooseBorderWidthToolStripMenuItem});
+            this.chooseBorderWidthToolStripMenuItem,
+            this.chooseCanvasSizeToolStripMenuItem});
             this.parametersToolStripMenuItem.Name = "parametersToolStripMenuItem";
             this.parametersToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.parametersToolStripMenuItem.Text = "Parameters";
@@ -122,7 +124,14 @@ namespace lab_oop
             // 
             this.chooseBorderWidthToolStripMenuItem.Name = "chooseBorderWidthToolStripMenuItem";
             this.chooseBorderWidthToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.chooseBorderWidthToolStripMenuItem.Text = "Choose border width";
+            this.chooseBorderWidthToolStripMenuItem.Text = "Choose border width...";
+            // 
+            // chooseCanvasSizeToolStripMenuItem
+            // 
+            this.chooseCanvasSizeToolStripMenuItem.Name = "chooseCanvasSizeToolStripMenuItem";
+            this.chooseCanvasSizeToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.chooseCanvasSizeToolStripMenuItem.Text = "Choose canvas size...";
+            this.chooseCanvasSizeToolStripMenuItem.Click += new System.EventHandler(this.chooseCanvasSizeToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -153,5 +162,6 @@ namespace lab_oop
         private ToolStripMenuItem chooseBaackgroundColorToolStripMenuItem;
         private ToolStripMenuItem chooseBorderColorToolStripMenuItem;
         private ToolStripMenuItem chooseBorderWidthToolStripMenuItem;
+        private ToolStripMenuItem chooseCanvasSizeToolStripMenuItem;
     }
 }

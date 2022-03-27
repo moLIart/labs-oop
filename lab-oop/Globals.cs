@@ -11,6 +11,7 @@ namespace lab_oop
     {
         public static Color rectBackColor = Color.White;
         public static Color rectBorderColor = Color.Black;
+        public static Size canvasSize = new Size(320, 240);
         public static int rectBorderWidth = 1;
     }
 }

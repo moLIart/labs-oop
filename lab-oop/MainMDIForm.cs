@@ -91,5 +91,14 @@ namespace lab_oop
             if (MyDialog.ShowDialog() == DialogResult.OK)
                 Globals.rectBorderColor = MyDialog.Color;
         }
+
+        private void chooseCanvasSizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChooseCanvasSizeDialog dialog = new ChooseCanvasSizeDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Globals.canvasSize = dialog.CanvasSize;
+            }
+        }
     }
 }
