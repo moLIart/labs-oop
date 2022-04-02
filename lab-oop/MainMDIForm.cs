@@ -52,6 +52,7 @@ namespace lab_oop
                     break;
             }
             this.fillingTypeButton.Enabled = figType < 2;
+            this.fillingTypeButton.Checked = Globals.isFilling;
             Globals.figureType = figType;
         }
 
