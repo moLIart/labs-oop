@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace lab_oop
 {
     [Serializable]
-    public class MyRectangle : Figure
+    public class MyEllipse : Figure
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -21,14 +21,20 @@ namespace lab_oop
 
         public bool isFilling { get; set; }
 
-        public MyRectangle() { }
-        public MyRectangle(int X, int Y, int Width, int Height) { 
-            this.X = X;
-            this.Y = Y; 
-            this.Width = Width; 
-            this.Height = Height;
+        public MyEllipse() { }
+        public MyEllipse(MyRectangle other)
+        {
+            X = other.X;
+            Y = other.Y;
+            Width = other.Width;
+            Height = other.Height;
+            BorderColor = other.BorderColor;
+            BorderWidth = other.BorderWidth;
+            BackgroundColor = other.BackgroundColor;
+            isFilling = other.isFilling;
         }
-        public MyRectangle(MyRectangle other) {
+        public MyEllipse(MyEllipse other)
+        {
             X = other.X;
             Y = other.Y;
             Width = other.Width;
@@ -39,15 +45,17 @@ namespace lab_oop
             isFilling = other.isFilling;
         }
 
-        public bool IsContain (MyRectangle other)
+        public bool IsContain(MyRectangle other)
         {
             return (X < other.X && Y < other.Y) && ((X + Width) > (other.X + other.Width) && (Y + Height) > (other.Y + other.Height));
         }
-        public override void Draw(Graphics g) {
+
+        public override void Draw(Graphics g)
+        {
             Pen borderPen = new Pen(BorderColor, BorderWidth);
             Brush brush = new SolidBrush(BackgroundColor);
-            if (isFilling) g.FillRectangle(brush, X, Y, Width, Height);
-            g.DrawRectangle(borderPen, X, Y, Width, Height);
+            if (isFilling) g.FillEllipse(brush, X, Y, Width, Height);
+            g.DrawEllipse(borderPen, X, Y, Width, Height);
         }
     }
 }

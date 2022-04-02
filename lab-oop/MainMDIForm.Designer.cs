@@ -41,6 +41,12 @@ namespace lab_oop
             this.chooseBorderColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseBorderWidthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseCanvasSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.figureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fillingTypeButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.figureRectangle = new System.Windows.Forms.ToolStripMenuItem();
+            this.figureEllipse = new System.Windows.Forms.ToolStripMenuItem();
+            this.figureStraightLine = new System.Windows.Forms.ToolStripMenuItem();
+            this.figureArbitraryLine = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +55,8 @@ namespace lab_oop
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.windowToolStripMenuItem,
             this.windowToolStripMenuItem1,
-            this.parametersToolStripMenuItem});
+            this.parametersToolStripMenuItem,
+            this.figureToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.windowToolStripMenuItem1;
             this.menuStrip1.Name = "menuStrip1";
@@ -133,6 +140,57 @@ namespace lab_oop
             this.chooseCanvasSizeToolStripMenuItem.Text = "Choose canvas size...";
             this.chooseCanvasSizeToolStripMenuItem.Click += new System.EventHandler(this.chooseCanvasSizeToolStripMenuItem_Click);
             // 
+            // figureToolStripMenuItem
+            // 
+            this.figureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillingTypeButton,
+            this.figureRectangle,
+            this.figureEllipse,
+            this.figureStraightLine,
+            this.figureArbitraryLine});
+            this.figureToolStripMenuItem.Name = "figureToolStripMenuItem";
+            this.figureToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.figureToolStripMenuItem.Text = "Figure";
+            // 
+            // fillingTypeButton
+            // 
+            this.fillingTypeButton.Name = "fillingTypeButton";
+            this.fillingTypeButton.Size = new System.Drawing.Size(180, 22);
+            this.fillingTypeButton.Text = "Filling";
+            this.fillingTypeButton.Click += new System.EventHandler(this.changeFilling_Click);
+            // 
+            // figureRectangle
+            // 
+            this.figureRectangle.Name = "figureRectangle";
+            this.figureRectangle.Size = new System.Drawing.Size(180, 22);
+            this.figureRectangle.Tag = "0";
+            this.figureRectangle.Text = "Rectangle";
+            this.figureRectangle.Click += new System.EventHandler(this.figureButton_Click);
+            // 
+            // figureEllipse
+            // 
+            this.figureEllipse.Name = "figureEllipse";
+            this.figureEllipse.Size = new System.Drawing.Size(180, 22);
+            this.figureEllipse.Tag = "1";
+            this.figureEllipse.Text = "Ellipse";
+            this.figureEllipse.Click += new System.EventHandler(this.figureButton_Click);
+            // 
+            // figureStraightLine
+            // 
+            this.figureStraightLine.Name = "figureStraightLine";
+            this.figureStraightLine.Size = new System.Drawing.Size(180, 22);
+            this.figureStraightLine.Tag = "2";
+            this.figureStraightLine.Text = "Straight line";
+            this.figureStraightLine.Click += new System.EventHandler(this.figureButton_Click);
+            // 
+            // figureArbitraryLine
+            // 
+            this.figureArbitraryLine.Name = "figureArbitraryLine";
+            this.figureArbitraryLine.Size = new System.Drawing.Size(180, 22);
+            this.figureArbitraryLine.Tag = "3";
+            this.figureArbitraryLine.Text = "Arbitrary line";
+            this.figureArbitraryLine.Click += new System.EventHandler(this.figureButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -163,5 +221,11 @@ namespace lab_oop
         private ToolStripMenuItem chooseBorderColorToolStripMenuItem;
         private ToolStripMenuItem chooseBorderWidthToolStripMenuItem;
         private ToolStripMenuItem chooseCanvasSizeToolStripMenuItem;
+        private ToolStripMenuItem figureToolStripMenuItem;
+        private ToolStripMenuItem figureRectangle;
+        private ToolStripMenuItem figureEllipse;
+        private ToolStripMenuItem figureStraightLine;
+        private ToolStripMenuItem figureArbitraryLine;
+        private ToolStripMenuItem fillingTypeButton;
     }
 }

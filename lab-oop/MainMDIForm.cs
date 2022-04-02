@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -10,16 +11,48 @@ namespace lab_oop
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
 
             int[] widthArr = new int[] { 1, 2, 5, 8, 10, 12, 15 };
             for (int i = 0; i < 7; i++) {
                 ToolStripMenuItem item = new ToolStripMenuItem(widthArr[i].ToString());
-                int tmp = widthArr[i];
-                item.Click += new EventHandler(delegate (Object o, EventArgs a) {
-                    Globals.rectBorderWidth = tmp;
-                });
-                this.chooseBorderWidthToolStripMenuItem.DropDownItems.Add(item);
+                item.Tag = widthArr[i];
+                item.Click += new EventHandler(this.rectBorderWidth_Click);
+                this.chooseBorderWidthToolStripMenuItem.DropDownItems.Add(item);             
             }
+            UpdateFigureType(Globals.figureType);
+        }
+        private void UpdateFigureType(int figType)
+        {
+            this.figureRectangle.Checked = false;
+            this.figureEllipse.Checked = false;
+            this.figureStraightLine.Checked = false;
+            this.figureArbitraryLine.Checked = false;
+
+            switch (figType)
+            {
+                case (int)FigureType.Rectangle:
+                    this.figureRectangle.Checked = true;
+                    break;
+                case (int)FigureType.Ellipse:
+                    this.figureEllipse.Checked = true;
+                    break;
+                case (int)FigureType.StraightLine:
+                    this.figureStraightLine.Checked = true;
+                    break;
+                case (int)FigureType.ArbitraryLine:
+                    this.figureArbitraryLine.Checked = true;
+                    break;
+                default:
+                    Debug.Assert(false, "unknown figure type");
+                    break;
+            }
+            this.fillingTypeButton.Enabled = figType < 2;
+            Globals.figureType = figType;
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +132,23 @@ namespace lab_oop
             {
                 Globals.canvasSize = dialog.CanvasSize;
             }
+        }
+
+        private void rectBorderWidth_Click(object sender, EventArgs e)
+        {
+            Globals.rectBorderWidth = (int)((ToolStripMenuItem)sender).Tag;
+        }
+        private void figureButton_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            UpdateFigureType(Int32.Parse((string)item.Tag));
+        }
+
+        private void changeFilling_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            item.Checked = !item.Checked;
+            Globals.isFilling = item.Checked;
         }
     }
 }
