@@ -18,7 +18,6 @@ namespace lab_oop
         public Canvas()
         {
             this.DoubleBuffered = true;
-
             InitializeComponent();
         }
 
@@ -36,20 +35,12 @@ namespace lab_oop
         {
             var binFormater = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
             binFormater.Serialize(stream, this.figures);
-//            binFormater.Serialize(stream, this.rectangles);
-//            binFormater.Serialize(stream, this.ellipses);
-//            binFormater.Serialize(stream, this.sLines);
-//            binFormater.Serialize(stream, this.aLines);
         }
 
         public void DeserializeData(Stream stream)
         {
             var binFormater = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
             this.figures = new List<Figure>((List<Figure>)binFormater.Deserialize(stream));
-            //this.rectangles = new List<MyRectangle>((List<MyRectangle>)binFormater.Deserialize(stream));
-            //this.ellipses = new List<MyEllipse>((List<MyEllipse>)binFormater.Deserialize(stream));
-            //this.sLines = new List<MyStraightLine>((List<MyStraightLine>)binFormater.Deserialize(stream));
-            //this.aLines = new List<MyArbitraryLine>((List<MyArbitraryLine>)binFormater.Deserialize(stream));
         }
 
         bool mouseDown = false;
@@ -132,6 +123,34 @@ namespace lab_oop
                         break;
                 }
                 this.Refresh();
+            }
+
+
+            // setup
+            Globals.cursorPosition.X = e.X;
+            Globals.cursorPosition.Y = e.Y;
+
+            // ... update (that sucks, need rewrite...)
+            MainForm form = (MainForm)Application.OpenForms[0];
+            if (form != null)
+            {
+                form.Invalidate();
+            }
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+
+            // setup
+            Globals.cursorPosition.X = -1;
+            Globals.cursorPosition.Y = -1;
+
+            // ... update (that sucks, need rewrite...)
+            MainForm form = (MainForm)Application.OpenForms[0];
+            if (form != null)
+            {
+                form.Invalidate();
             }
         }
 
