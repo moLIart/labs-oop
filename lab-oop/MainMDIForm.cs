@@ -184,7 +184,7 @@ namespace lab_oop
         private void chooseCanvasSizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // setup
-            ChooseCanvasSizeDialog dialog = new ChooseCanvasSizeDialog();
+            ChooseCanvasSizeDialog dialog = new ChooseCanvasSizeDialog(Globals.canvasSize);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 Globals.canvasSize = dialog.CanvasSize;

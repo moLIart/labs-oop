@@ -174,7 +174,11 @@
             this.Controls.Add(this.radio800x600);
             this.Controls.Add(this.radio640x480);
             this.Controls.Add(this.radio320x240);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ChooseCanvasSizeDialog";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Choose Canvas Size";
             ((System.ComponentModel.ISupportInitialize)(this.widthCtrl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightCtrl)).EndInit();
